@@ -1,0 +1,2 @@
+0 */6 * * * flock -n /tmp/rclone-lock -c "/config/rclone/rclone.sh"
+

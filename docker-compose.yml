@@ -10,6 +10,12 @@ services:
       - AWS_DEFAULT_REGION
     volumes:
       - './config/rclone:/config/rclone'
+      - './crontab.txt:/etc/crontabs/internal'
       - '~/Documents:/data'
     cpus: 0.5
     mem_limit: 512m
+    network_mode: host
+    user: root
+    security_opt:
+      - 'no-new-privileges:true'
+
