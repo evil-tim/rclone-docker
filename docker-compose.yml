@@ -9,9 +9,16 @@ services:
       - AWS_SECRET_ACCESS_KEY
       - AWS_DEFAULT_REGION
     volumes:
+      # config
       - './config/rclone:/config/rclone'
+      # cron
       - './crontab.txt:/etc/crontabs/internal'
-      - '~/Documents:/data'
+      # data to sync
+      - '~/Documents:/data/Documents'
+      - '~/Music:/data/Music'
+      - '~/homeassistant/config/backups:/data/HomeAssistant'
+      # timezone
+      - '/etc/localtime:/etc/localtime:ro'
     cpus: 0.5
     mem_limit: 512m
     network_mode: host
