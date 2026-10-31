@@ -14,9 +14,7 @@ services:
       # cron
       - './crontab.txt:/etc/crontabs/internal'
       # data to sync
-      - '~/Documents:/data/Documents'
-      - '~/Music:/data/Music'
-      - '~/homeassistant/config/backups:/data/HomeAssistant'
+      - '/media/storage/_:/data/_'
       # timezone
       - '/etc/localtime:/etc/localtime:ro'
     cpus: 0.5
